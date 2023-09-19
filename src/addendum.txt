@@ -27,8 +27,6 @@
 		
 <h1>: The h1 tag represents the main heading of the web page. It is used to define the title or topic of the page and is typically the largest and most prominent text.
 		
-<hr>: The hr tag inserts a horizontal line or divider in the content, often used to separate sections or topics within a page.
-		
 <p>: The p tag is used to define paragraphs of text. It separates blocks of text and is one of the most common HTML tags for structuring content.
 		
 <b>: The b tag is used for text formatting and represents bold text. It makes the enclosed text appear in a bold font.
