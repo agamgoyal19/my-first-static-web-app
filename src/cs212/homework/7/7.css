@@ -1,1 +1,39 @@
 
+        body {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer, article, nav, aside {
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        header, footer {
+            grid-column: span 3;
+            text-align: center;
+        }
+
+        nav, aside {
+            min-width: 200px;
+        }
+
+        nav {
+            grid-row: 2;
+        }
+
+        article {
+            grid-row: 2;
+            grid-column: 2 / 3;
+        }
+
+        footer {
+            grid-row: 3;
+        }
+
+        img {
+            max-width: 100%;
+        }
