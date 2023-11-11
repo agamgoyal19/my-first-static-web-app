@@ -8,3 +8,4 @@ This repo has a dev container. This means if you open it inside a [GitHub Codesp
 ![amazon](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/6847db36-508e-4274-978c-97f9b36c3245)
 ![javascript](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/2b3ff47c-eca0-4849-8596-bff807dfc64e)
 ![j1](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/36ff878d-4dd8-44c5-b0b2-f42b134d8ecb)
+![j2](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/838d870a-7187-4274-9bec-34d9b8378a75)
