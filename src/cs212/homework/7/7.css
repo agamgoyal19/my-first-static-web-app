@@ -5,6 +5,8 @@
             min-height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            background-image: url('https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/36ff878d-4dd8-44c5-b0b2-f42b134d8ecb');
+            background-size: cover;
             background-color: darkblue;
             color: white;
         }
