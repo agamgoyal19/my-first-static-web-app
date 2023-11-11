@@ -8,6 +8,7 @@
             background-image:url('https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/2b3ff47c-eca0-4849-8596-bff807dfc64e');
             background-size: cover;
             background-position: center;
+            color: white;
         }
 
         header, footer, article, nav, aside {
