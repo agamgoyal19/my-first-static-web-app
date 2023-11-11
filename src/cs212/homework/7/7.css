@@ -5,6 +5,7 @@
             min-height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            background-image:url('javascript.jpeg');
         }
 
         header, footer, article, nav, aside {
