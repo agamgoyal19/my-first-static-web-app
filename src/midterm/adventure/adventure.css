@@ -27,6 +27,7 @@ button {
     border: none;
     border-radius: 5px;
     outline: none;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -49,8 +50,20 @@ img {
     border: none;
     border-radius: 5px;
     outline: none;
+    transition: background-color 0.3s ease;
 }
 
 #restart-button:hover {
     background-color: #27ae60;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    button {
+        font-size: 14px;
+    }
+
+    #restart-button {
+        font-size: 14px;
+    }
 }
