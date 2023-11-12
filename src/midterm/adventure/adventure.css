@@ -8,6 +8,7 @@ body {
     background-color: #f0f0f0;
     background-image:url('https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/375907c3-70ed-4cc5-b46d-2e36b1cc06f0');
     background-repeat:no-repeat;
+    background-size:cover;
 }
 
 #game-board {
