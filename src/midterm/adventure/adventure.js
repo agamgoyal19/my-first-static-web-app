@@ -1,77 +1,88 @@
-// Quiz data
-const questions = [
-    {
-        question: "What is the capital of France?",
-        options: ["Berlin", "Madrid", "Paris", "Rome"],
-        correctAnswer: "Paris"
-    },
-    {
-        question: "Which planet is known as the Red Planet?",
-        options: ["Mars", "Venus", "Jupiter", "Saturn"],
-        correctAnswer: "Mars"
-    },
-    {
-        question: "Who wrote 'Romeo and Juliet'?",
-        options: ["Charles Dickens", "Jane Austen", "William Shakespeare", "Mark Twain"],
-        correctAnswer: "William Shakespeare"
-    }
+const cardImages = [
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg',
+    'image4.jpg',
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg',
+    'image4.jpg',
+    // Add more images as needed
 ];
 
-// Game variables
-let currentQuestion = 0;
-let score = 0;
+let shuffledCards = [];
+let selectedCards = [];
+let moves = 0;
 
-// Function to start/restart the quiz
-function startQuiz() {
-    currentQuestion = 0;
-    score = 0;
-    displayQuestion();
+// Function to start/restart the game
+function startGame() {
+    moves = 0;
+    selectedCards = [];
+    shuffledCards = shuffleArray(cardImages.concat(cardImages));
+
+    createGameBoard();
 }
 
-// Function to display the current question and options
-function displayQuestion() {
-    const questionElement = document.getElementById("question");
-    const optionsElement = document.getElementById("options");
-    const scoreElement = document.getElementById("score");
+// Function to shuffle an array
+function shuffleArray(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
 
-    // Display question
-    questionElement.textContent = questions[currentQuestion].question;
+// Function to create the game board
+function createGameBoard() {
+    const gameBoardElement = document.getElementById('game-board');
+    gameBoardElement.innerHTML = '';
 
-    // Display options
-    optionsElement.innerHTML = "";
-    questions[currentQuestion].options.forEach(option => {
-        const button = document.createElement("button");
-        button.textContent = option;
-        button.addEventListener("click", () => selectAnswer(option));
-        optionsElement.appendChild(button);
+    shuffledCards.forEach((image, index) => {
+        const cardElement = document.createElement('div');
+        cardElement.classList.add('card');
+        cardElement.dataset.index = index;
+        cardElement.style.backgroundImage = `url('images/${image}')`;
+        cardElement.addEventListener('click', () => flipCard(cardElement));
+
+        gameBoardElement.appendChild(cardElement);
     });
-
-    // Display score
-    scoreElement.textContent = `Score: ${score}`;
 }
 
-// Function to check the selected answer
-function selectAnswer(selectedOption) {
-    const correctAnswer = questions[currentQuestion].correctAnswer;
+// Function to handle card flips
+function flipCard(cardElement) {
+    if (selectedCards.length < 2 && !selectedCards.includes(cardElement)) {
+        cardElement.classList.add('flipped');
+        selectedCards.push(cardElement);
 
-    if (selectedOption === correctAnswer) {
-        score++;
+        if (selectedCards.length === 2) {
+            setTimeout(checkMatch, 1000);
+        }
     }
+}
 
-    // Move to the next question or end the quiz
-    currentQuestion++;
-    if (currentQuestion < questions.length) {
-        displayQuestion();
+// Function to check if the selected cards match
+function checkMatch() {
+    const [firstCard, secondCard] = selectedCards;
+
+    if (firstCard.style.backgroundImage === secondCard.style.backgroundImage) {
+        selectedCards = [];
     } else {
-        endQuiz();
+        selectedCards.forEach(card => card.classList.remove('flipped'));
+        selectedCards = [];
+    }
+
+    moves++;
+
+    if (isGameComplete()) {
+        endGame();
     }
 }
 
-// Function to end the quiz
-function endQuiz() {
-    const quizElement = document.getElementById("quiz");
-    quizElement.innerHTML = `<p>Quiz completed! Your final score is ${score} out of ${questions.length}.</p>`;
+// Function to check if the game is complete
+function isGameComplete() {
+    return document.querySelectorAll('.flipped').length === shuffledCards.length;
 }
 
-// Initialize the quiz
-startQuiz();
+// Function to end the game
+function endGame() {
+    alert(`Congratulations! You completed the game in ${moves} moves.`);
+}
+
+// Initialize the game
+startGame();
