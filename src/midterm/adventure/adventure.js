@@ -1,20 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let gameState = {
-        stage: 1,
-        story: 'Once upon a time...',
-        choices: [
-            { text: 'Go left', consequence: 2, image: 'left.jpg' },
-            { text: 'Go right', consequence: 3, image: 'right.jpg' }
-        ]
-    };
+    let gameState = {};
 
     function startGame() {
         gameState = {
             stage: 1,
-            story: 'Once upon a time...',
+            story: 'You find yourself at the entrance of a dark cave. What do you do?',
             choices: [
-                { text: 'Go left', consequence: 2, image: 'left.jpg' },
-                { text: 'Go right', consequence: 3, image: 'right.jpg' }
+                { text: 'Enter the cave', consequence: 2, image: 'cave.jpg' },
+                { text: 'Turn back', consequence: 3, image: 'forest.jpg' }
             ]
         };
         updatePage();
