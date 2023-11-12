@@ -2,16 +2,23 @@ body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     margin: 20px;
+    background-color: #f0f0f0;
 }
 
 header {
     margin-bottom: 20px;
 }
 
-#quiz {
-    margin: 20px;
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
-#options button {
-    margin: 5px;
+.card {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
 }
