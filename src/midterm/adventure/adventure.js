@@ -108,13 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startGame() {
-        gameActive = true;
-        draw();
+        if (!gameActive) {
+            gameActive = true;
+            draw();
+        }
     }
 
     document.addEventListener('keydown', keyDownHandler);
     document.addEventListener('keyup', keyUpHandler);
 
-    // Start the game loop
-    startGame();
+    document.getElementById('startButton').addEventListener('click', startGame);
 });
