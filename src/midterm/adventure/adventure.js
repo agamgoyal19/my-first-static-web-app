@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let ballSpeedX = 5;
     let ballSpeedY = 5;
 
+    let score1 = 0;
+    let score2 = 0;
+
+    let gameActive = false;
+
     function draw() {
         // Clear the canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -58,18 +63,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Check for scoring
-        if (ballX - ballSize < 0 || ballX + ballSize > canvas.width) {
+        if (ballX - ballSize < 0) {
+            score2++;
+            resetGame();
+        } else if (ballX + ballSize > canvas.width) {
+            score1++;
             resetGame();
         }
 
+        // Draw the score
+        document.getElementById('score').innerText = `Score: ${score1} - ${score2}`;
+
         // Repeat the draw function
-        requestAnimationFrame(draw);
+        if (gameActive) {
+            requestAnimationFrame(draw);
+        }
     }
 
     function resetGame() {
         ballX = canvas.width / 2;
         ballY = canvas.height / 2;
-        ballSpeedX = 5;
+        ballSpeedX = -ballSpeedX;
         ballSpeedY = 5;
     }
 
@@ -93,9 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function startGame() {
+        gameActive = true;
+        draw();
+    }
+
     document.addEventListener('keydown', keyDownHandler);
     document.addEventListener('keyup', keyUpHandler);
 
     // Start the game loop
-    draw();
+    startGame();
 });
