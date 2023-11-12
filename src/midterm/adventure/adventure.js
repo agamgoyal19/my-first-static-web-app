@@ -1,88 +1,101 @@
-const cardImages = [
-    'image1.jpg',
-    'image2.jpg',
-    'image3.jpg',
-    'image4.jpg',
-    'image1.jpg',
-    'image2.jpg',
-    'image3.jpg',
-    'image4.jpg',
-    // Add more images as needed
-];
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
 
-let shuffledCards = [];
-let selectedCards = [];
-let moves = 0;
+    const paddleWidth = 10;
+    const paddleHeight = 60;
+    const ballSize = 10;
 
-// Function to start/restart the game
-function startGame() {
-    moves = 0;
-    selectedCards = [];
-    shuffledCards = shuffleArray(cardImages.concat(cardImages));
+    let paddle1Y = (canvas.height - paddleHeight) / 2;
+    let paddle2Y = (canvas.height - paddleHeight) / 2;
+    let paddle1Speed = 0;
+    let paddle2Speed = 0;
 
-    createGameBoard();
-}
+    let ballX = canvas.width / 2;
+    let ballY = canvas.height / 2;
+    let ballSpeedX = 5;
+    let ballSpeedY = 5;
 
-// Function to shuffle an array
-function shuffleArray(array) {
-    return array.sort(() => Math.random() - 0.5);
-}
+    function draw() {
+        // Clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-// Function to create the game board
-function createGameBoard() {
-    const gameBoardElement = document.getElementById('game-board');
-    gameBoardElement.innerHTML = '';
+        // Draw paddles
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, paddle1Y, paddleWidth, paddleHeight);
+        ctx.fillRect(canvas.width - paddleWidth, paddle2Y, paddleWidth, paddleHeight);
 
-    shuffledCards.forEach((image, index) => {
-        const cardElement = document.createElement('div');
-        cardElement.classList.add('card');
-        cardElement.dataset.index = index;
-        cardElement.style.backgroundImage = `url('images/${image}')`;
-        cardElement.addEventListener('click', () => flipCard(cardElement));
+        // Draw ball
+        ctx.beginPath();
+        ctx.arc(ballX, ballY, ballSize, 0, Math.PI * 2);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+        ctx.closePath();
 
-        gameBoardElement.appendChild(cardElement);
-    });
-}
+        // Move paddles
+        paddle1Y += paddle1Speed;
+        paddle2Y += paddle2Speed;
 
-// Function to handle card flips
-function flipCard(cardElement) {
-    if (selectedCards.length < 2 && !selectedCards.includes(cardElement)) {
-        cardElement.classList.add('flipped');
-        selectedCards.push(cardElement);
+        // Ensure paddles stay within the canvas
+        paddle1Y = Math.max(0, Math.min(canvas.height - paddleHeight, paddle1Y));
+        paddle2Y = Math.max(0, Math.min(canvas.height - paddleHeight, paddle2Y));
 
-        if (selectedCards.length === 2) {
-            setTimeout(checkMatch, 1000);
+        // Move the ball
+        ballX += ballSpeedX;
+        ballY += ballSpeedY;
+
+        // Bounce off the top and bottom of the canvas
+        if (ballY - ballSize < 0 || ballY + ballSize > canvas.height) {
+            ballSpeedY = -ballSpeedY;
+        }
+
+        // Bounce off paddles
+        if (
+            (ballX - ballSize < paddleWidth && ballY > paddle1Y && ballY < paddle1Y + paddleHeight) ||
+            (ballX + ballSize > canvas.width - paddleWidth && ballY > paddle2Y && ballY < paddle2Y + paddleHeight)
+        ) {
+            ballSpeedX = -ballSpeedX;
+        }
+
+        // Check for scoring
+        if (ballX - ballSize < 0 || ballX + ballSize > canvas.width) {
+            resetGame();
+        }
+
+        // Repeat the draw function
+        requestAnimationFrame(draw);
+    }
+
+    function resetGame() {
+        ballX = canvas.width / 2;
+        ballY = canvas.height / 2;
+        ballSpeedX = 5;
+        ballSpeedY = 5;
+    }
+
+    function keyDownHandler(e) {
+        if (e.key === 'ArrowUp') {
+            paddle2Speed = -5;
+        } else if (e.key === 'ArrowDown') {
+            paddle2Speed = 5;
+        } else if (e.key === 'w') {
+            paddle1Speed = -5;
+        } else if (e.key === 's') {
+            paddle1Speed = 5;
         }
     }
-}
 
-// Function to check if the selected cards match
-function checkMatch() {
-    const [firstCard, secondCard] = selectedCards;
-
-    if (firstCard.style.backgroundImage === secondCard.style.backgroundImage) {
-        selectedCards = [];
-    } else {
-        selectedCards.forEach(card => card.classList.remove('flipped'));
-        selectedCards = [];
+    function keyUpHandler(e) {
+        if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+            paddle2Speed = 0;
+        } else if (e.key === 'w' || e.key === 's') {
+            paddle1Speed = 0;
+        }
     }
 
-    moves++;
+    document.addEventListener('keydown', keyDownHandler);
+    document.addEventListener('keyup', keyUpHandler);
 
-    if (isGameComplete()) {
-        endGame();
-    }
-}
-
-// Function to check if the game is complete
-function isGameComplete() {
-    return document.querySelectorAll('.flipped').length === shuffledCards.length;
-}
-
-// Function to end the game
-function endGame() {
-    alert(`Congratulations! You completed the game in ${moves} moves.`);
-}
-
-// Initialize the game
-startGame();
+    // Start the game loop
+    draw();
+});
