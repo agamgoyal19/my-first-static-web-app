@@ -13,3 +13,4 @@ This repo has a dev container. This means if you open it inside a [GitHub Codesp
 ![amazon1](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/195f3e87-d38b-4afc-ad28-901653e67c12)
 ![amazon2](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/a2b6f9f6-a9be-43ff-917d-99a805eb5f79)
 ![a](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/20ea6947-194f-440c-94a2-2ac4083deec5)
+![treasure](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/1e22e878-59ba-435d-8bd1-23f8a9155920)
