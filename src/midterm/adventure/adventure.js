@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const storyText = document.getElementById('story-text');
         const choicesContainer = document.getElementById('choices');
         const endingImage = document.getElementById('ending-image');
+        const restartButton = document.getElementById('restart-button');
 
         storyText.textContent = gameState.story;
 
@@ -42,8 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (gameState.stage === 'end') {
             endingImage.src = gameState.image;
             endingImage.style.display = 'block';
+            restartButton.style.display = 'block';
         } else {
             endingImage.style.display = 'none';
+            restartButton.style.display = 'none';
         }
     }
 
@@ -56,6 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Display relevant image for the ending
             document.getElementById('ending-image').src = gameState.image;
         }
+    }
+
+    function restartGame() {
+        startGame();
+        document.getElementById('ending-image').src = ''; // Clear the ending image
     }
 
     // Start the game
