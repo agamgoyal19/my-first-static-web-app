@@ -62,3 +62,55 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start the game
     startGame();
 });
+
+const gameData = {
+    2: {
+        stage: 2,
+        story: 'As you enter the cave, you encounter a fork in the path. Which way do you go?',
+        choices: [
+            { text: 'Go left', consequence: 4, image: 'left.jpg' },
+            { text: 'Go right', consequence: 5, image: 'right.jpg' }
+        ]
+    },
+    3: {
+        stage: 'end',
+        story: 'You decide to turn back and explore the forest. You discover a hidden treasure!',
+        image: 'treasure.jpg'
+    },
+    4: {
+        stage: 4,
+        story: 'You go left and find a mysterious door. What do you do?',
+        choices: [
+            { text: 'Open the door', consequence: 6, image: 'door.jpg' },
+            { text: 'Continue straight', consequence: 7, image: 'straight.jpg' }
+        ]
+    },
+    5: {
+        stage: 5,
+        story: 'You go right and encounter a deep chasm. What\'s your next move?',
+        choices: [
+            { text: 'Jump across', consequence: 8, image: 'jump.jpg' },
+            { text: 'Find another path', consequence: 9, image: 'path.jpg' }
+        ]
+    },
+    6: {
+        stage: 'end',
+        story: 'You open the door and discover a hidden treasure chest!',
+        image: 'treasure-chest.jpg'
+    },
+    7: {
+        stage: 'end',
+        story: 'You continue straight and find an ancient artifact!',
+        image: 'artifact.jpg'
+    },
+    8: {
+        stage: 'end',
+        story: 'You successfully jump across the chasm and find a magical portal!',
+        image: 'portal.jpg'
+    },
+    9: {
+        stage: 'end',
+        story: 'You wisely find another path and stumble upon a secret garden!',
+        image: 'garden.jpg'
+    }
+};
