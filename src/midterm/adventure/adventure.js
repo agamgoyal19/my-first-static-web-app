@@ -111,6 +111,6 @@ const gameData = {
     9: {
         stage: 'end',
         story: 'You wisely find another path and stumble upon a secret garden!',
-        image: 'https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/7cb73620-181f-4b25-9c61-90fd36c7ad08'
+        image: 'https://user-images.githubusercontent.com/86164231/282337532-2bce1524-1d4e-4323-a7d4-455613b4e753.jpg'
     }
 };
