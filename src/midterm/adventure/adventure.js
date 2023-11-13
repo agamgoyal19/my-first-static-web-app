@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function makeChoice(choice) {
         gameState = gameData[choice.consequence];
         updatePage();
-
+        document.getElementById('ending-image').src = gameState.image;
         // Check if it's an ending
         if (gameState.stage === 'end') {
             // Display the relevant image for the ending
