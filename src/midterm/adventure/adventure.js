@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function startGame() {
         gameState = {
             stage: 1,
-            story: 'Here you find yourself at the entrance of a dark cave.Now what you choose to do?',
+            story: 'Here you find yourself at the entrance of a dark cave. Now what will you choose to do?',
             choices: [
                 { text: 'Enter the cave', consequence: 2, image: 'cave.jpg' },
                 { text: 'Turn back', consequence: 3, image: 'forest.jpg' }
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             choicesContainer.appendChild(button);
         });
 
-        // Display ending image if game is over
+        // Display ending image if the game is over
         if (gameState.stage === 'end') {
             endingImage.src = gameState.image;
             endingImage.style.display = 'block';
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Check if it's an ending
         if (gameState.stage === 'end') {
-            // Display relevant image for the ending
+            // Display the relevant image for the ending
             document.getElementById('ending-image').src = gameState.image;
         }
     }
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const gameData = {
     2: {
         stage: 2,
-        story: 'Now as you enter the cave, you encounter two paths. Which way you choose go?',
+        story: 'Now as you enter the cave, you encounter two paths. Which way will you choose to go?',
         choices: [
             { text: 'Left turn', consequence: 4, image: 'left.jpg' },
             { text: 'Right turn', consequence: 5, image: 'right.jpg' }
@@ -79,9 +79,9 @@ const gameData = {
     },
     4: {
         stage: 4,
-        story: 'You take a left turn and now here is a mysterious door. What you will choose to do?',
+        story: 'You take a left turn and now here is a mysterious door. What will you choose to do?',
         choices: [
-            { text: 'Go towards door and open it', consequence: 6, image: 'door.jpg' },
+            { text: 'Go towards the door and open it', consequence: 6, image: 'door.jpg' },
             { text: 'Go straight', consequence: 7, image: 'straight.jpg' }
         ]
     },
@@ -126,6 +126,6 @@ const gameData = {
     12: {
         stage: 'end',
         story: 'You discovered a time machine hidden in the cave!',
-        image: 'https://user-images.githubusercontent.com/86164231/282337536-ee468260-1a1a-4d23-9c46-69ab60f6da47.jpg'
-    },
+        image: 'https://user-images.githubusercontent.com/86164231/282337536-ee468260-1a1a-4d23-9c46-69ab60f6da47
+    }
 };
