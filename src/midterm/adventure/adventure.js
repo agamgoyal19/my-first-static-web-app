@@ -75,7 +75,7 @@ const gameData = {
     3: {
         stage: 'end',
         story: 'You decide to turn back and explore the forest. You discover a hidden treasure!',
-        image: 'https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/abd820cc-78d8-43bb-b575-09793991fbb5'
+        image: 'https://user-images.githubusercontent.com/86164231/282337528-14cd6edd-fc69-4dd0-aed7-5fd1fdfb8dde.jpg'
     },
     4: {
         stage: 4,
@@ -96,12 +96,12 @@ const gameData = {
     6: {
         stage: 'end',
         story: 'You open the door and discover a hidden treasure chest!',
-        image: 'https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/567ca250-402c-4873-aa80-e5cfb19cd596'
+        image: 'https://user-images.githubusercontent.com/86164231/282337526-905f9420-f203-4074-aa86-9a4da951338b.jpg'
     },
     7: {
         stage: 'end',
         story: 'You continue straight and find an ancient artifact!',
-        image: 'https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/2b8ed078-3b10-4c08-ab83-69b2fdd4bd03'
+        image: 'https://user-images.githubusercontent.com/86164231/282337529-5df861b5-8f96-474e-8a56-aedaef9cc76b.jpg'
     },
     8: {
         stage: 'end',
