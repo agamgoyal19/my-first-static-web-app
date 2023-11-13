@@ -71,44 +71,78 @@ const gameData = {
         stage: 3,
         story: 'You enter the dark forest and encounter a mystical creature. It offers you a magical key. Do you take it?',
         choices: [
-            { text: 'Take the key', consequence: 6, image: 'mystical_key.jpg' },
-            { text: 'Decline and keep walking', consequence: 7, image: 'dark_forest.jpg' }
+            { text: 'Take the key', consequence: 12, image: 'mystical_key.jpg' },
+            { text: 'Decline and keep walking', consequence: 13, image: 'dark_forest.jpg' }
         ]
     },
     4: {
-        stage: 'end',
-        story: 'You enter the cave and find a treasure chest filled with gold and gems!',
-        image: 'treasure.jpg'
-    },
-    5: {
-        stage: 'end',
-        story: 'You continue along the river and discover a peaceful village.',
-        image: 'village.jpg'
-    },
-    6: {
-        stage: 'end',
-        story: 'You take the mystical key and unlock a portal to another realm!',
-        image: 'portal.jpg'
-    },
-    7: {
-        stage: 'end',
-        story: 'You decline the creature\'s offer and find yourself back at the beginning.',
-        image: 'beginning.jpg'
-    },
-    8: {
-        stage: 8,
-        story: 'As you wander through the land, you come across a mysterious old book. Do you read it?',
+        stage: 4,
+        story: 'You entered the cave and here are two doors',
         choices: [
-            { text: 'Read the book', consequence: 9, image: 'old_book.jpg' },
-            { text: 'Ignore the book and continue exploring', consequence: 10, image: 'explore.jpg' }
+            { text: 'Enter the left door', consequence: 8, image: 'left_door.jpg' },
+            { text: 'Enter the right door', consequence: 9, image: 'right_door.jpg' }
         ]
     },
+    5: {
+        stage: 5,
+        story: 'You followed the river and found yourself at intersection of two paths',
+        choices: [
+            { text: 'Enter the left path', consequence: 10, image: 'left_path.jpg' },
+            { text: 'Enter the right path', consequence: 11, image: 'right_path.jpg' }
+        ]
+    },
+     8: {
+        stage: 'end',
+        story: 'You continue along the left door and discover a peaceful village.',
+        image: 'village.jpg'
+    },
     9: {
+        stage: 'end',
+        story: 'You took the right door and unlock a portal to another realm!',
+        image: 'portal.jpg'
+    },
+    10: {
+        stage: 'end',
+        story: 'You continue along the left path and discover a lovely island.',
+        image: 'village.jpg'
+    },
+    11: {
+        stage: 'end',
+        story: 'You took the right path and unlock a portal to another world!',
+        image: 'portal.jpg'
+    },
+    12: {
+        stage: 12,
+        story: 'You took the magical key from the mystical creature and you found two chests',
+        choices: [
+            { text: 'Open chest 1', consequence: 14, image: 'left_path.jpg' },
+            { text: 'Open chest 2', consequence: 15, image: 'right_path.jpg' }
+        ]
+    },
+    13: {
+        stage: 13,
+        story: 'As you wander through the land, you come across a mysterious old book. Do you read it?',
+        choices: [
+            { text: 'Read the book', consequence: 16, image: 'old_book.jpg' },
+            { text: 'Ignore the book and continue exploring', consequence: 17, image: 'explore.jpg' }
+        ]
+    },
+    14: {
+        stage: 'end',
+        story: 'You opened chest 1 and found a glorious painting',
+        image: 'portal.jpg'
+    },
+    15: {
+        stage: 'end',
+        story: 'You opened chest 2 and found a glorious sculpture',
+        image: 'portal.jpg'
+    },
+    16: {
         stage: 'end',
         story: 'You read the ancient book and gain knowledge that transforms you into a wise sage!',
         image: 'wise_sage.jpg'
     },
-    10: {
+    17: {
         stage: 'end',
         story: 'You ignore the book and stumble upon a hidden portal leading to a futuristic city!',
         image: 'futuristic_city.jpg'
