@@ -104,12 +104,12 @@ const gameData = {
     10: {
         stage: 'end',
         story: 'You continue along the left path and discover a lovely island.',
-        image: 'village.jpg'
+        image: 'island.jpg'
     },
     11: {
         stage: 'end',
         story: 'You took the right path and unlock a portal to another world!',
-        image: 'portal.jpg'
+        image: 'world.jpg'
     },
     12: {
         stage: 12,
@@ -130,12 +130,12 @@ const gameData = {
     14: {
         stage: 'end',
         story: 'You opened chest 1 and found a glorious painting',
-        image: 'portal.jpg'
+        image: 'painting.jpg'
     },
     15: {
         stage: 'end',
         story: 'You opened chest 2 and found a glorious sculpture',
-        image: 'portal.jpg'
+        image: 'sculpture.jpg'
     },
     16: {
         stage: 'end',
