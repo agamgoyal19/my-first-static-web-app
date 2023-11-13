@@ -90,7 +90,7 @@ const gameData = {
         story: 'You go right and encounter a deep chasm. What\'s your next move?',
         choices: [
             { text: 'Jump across', consequence: 8, image: 'jump.jpg' },
-            { text: 'Find another path', consequence: 9, image: 'path.jpg' }
+            { text: 'Find another path', consequence: 9, image: 'https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/7cb73620-181f-4b25-9c61-90fd36c7ad08' }
         ]
     },
     6: {
