@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function startGame() {
         gameState = {
             stage: 1,
-            story: 'Here you find yourself at the entrance of a dark cave. Now what will you choose to do?',
+            story: 'You wake up in a mysterious land. There are multiple paths ahead. Choose your direction.',
             choices: [
-                { text: 'Enter the cave', consequence: 2, image: 'cave.jpg' },
-                { text: 'Turn back', consequence: 3, image: 'forest.jpg' }
+                { text: 'Follow the river', consequence: 2, image: 'river.jpg' },
+                { text: 'Enter the dark forest', consequence: 3, image: 'forest.jpg' }
             ]
         };
         updatePage();
@@ -54,78 +54,64 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function restartGame() {
-        startGame();
-        document.getElementById('ending-image').src = ''; // Clear the ending image
-    }
-
-    // Start the game
+    // Start the game initially
     startGame();
 });
 
 const gameData = {
     2: {
         stage: 2,
-        story: 'Now as you enter the cave, you encounter two paths. Which way will you choose to go?',
+        story: 'You follow the river and discover a hidden cave. Do you enter the cave?',
         choices: [
-            { text: 'Left turn', consequence: 4, image: 'left.jpg' },
-            { text: 'Right turn', consequence: 5, image: 'right.jpg' }
+            { text: 'Enter the cave', consequence: 4, image: 'cave.jpg' },
+            { text: 'Continue along the river', consequence: 5, image: 'river_path.jpg' }
         ]
     },
     3: {
-        stage: 'end',
-        story: 'As you chose to turn back and explore the forest. You discover a hidden treasure!',
-        image: 'https://user-images.githubusercontent.com/86164231/282337528-14cd6edd-fc69-4dd0-aed7-5fd1fdfb8dde.jpg'
+        stage: 3,
+        story: 'You enter the dark forest and encounter a mystical creature. It offers you a magical key. Do you take it?',
+        choices: [
+            { text: 'Take the key', consequence: 6, image: 'mystical_key.jpg' },
+            { text: 'Decline and keep walking', consequence: 7, image: 'dark_forest.jpg' }
+        ]
     },
     4: {
-        stage: 4,
-        story: 'You take a left turn and now here is a mysterious door. What will you choose to do?',
-        choices: [
-            { text: 'Go towards the door and open it', consequence: 6, image: 'door.jpg' },
-            { text: 'Go straight', consequence: 7, image: 'straight.jpg' }
-        ]
+        stage: 'end',
+        story: 'You enter the cave and find a treasure chest filled with gold and gems!',
+        image: 'treasure.jpg'
     },
     5: {
-        stage: 5,
-        story: 'You take a right turn and here you encounter a deep chasm. What\'s your next move?',
-        choices: [
-            { text: 'Jump across', consequence: 8, image: 'jump.jpg' },
-            { text: 'Find another path', consequence: 9, image: 'another.jpg' }
-        ]
+        stage: 'end',
+        story: 'You continue along the river and discover a peaceful village.',
+        image: 'village.jpg'
     },
     6: {
         stage: 'end',
-        story: 'You opened the door and now here is a hidden treasure chest!',
-        image: 'https://user-images.githubusercontent.com/86164231/282337526-905f9420-f203-4074-aa86-9a4da951338b.jpg'
+        story: 'You take the mystical key and unlock a portal to another realm!',
+        image: 'portal.jpg'
     },
     7: {
         stage: 'end',
-        story: 'You continued straight and now here is an ancient artifact!',
-        image: 'https://user-images.githubusercontent.com/86164231/282337529-5df861b5-8f96-474e-8a56-aedaef9cc76b.jpg'
+        story: 'You decline the creature\'s offer and find yourself back at the beginning.',
+        image: 'beginning.jpg'
     },
     8: {
-        stage: 'end',
-        story: 'You successfully jumped across the chasm and here is a magical portal!',
-        image: 'https://user-images.githubusercontent.com/86164231/282337531-3f1181ac-fb66-4cb6-a715-62634f0f2bcf.jpg'
+        stage: 8,
+        story: 'As you wander through the land, you come across a mysterious old book. Do you read it?',
+        choices: [
+            { text: 'Read the book', consequence: 9, image: 'old_book.jpg' },
+            { text: 'Ignore the book and continue exploring', consequence: 10, image: 'explore.jpg' }
+        ]
     },
     9: {
         stage: 'end',
-        story: 'You wisely found another path and stumbled upon a secret garden!',
-        image: 'https://user-images.githubusercontent.com/86164231/282337532-2bce1524-1d4e-4323-a7d4-455613b4e753.jpg'
+        story: 'You read the ancient book and gain knowledge that transforms you into a wise sage!',
+        image: 'wise_sage.jpg'
     },
     10: {
         stage: 'end',
-        story: 'You encountered a mysterious portal and it transported you to a different dimension!',
-        image: 'https://user-images.githubusercontent.com/86164231/282337533-7397c7b5-2e8c-4d6a-b090-f79f3eb94e1a.jpg'
+        story: 'You ignore the book and stumble upon a hidden portal leading to a futuristic city!',
+        image: 'futuristic_city.jpg'
     },
-    11: {
-        stage: 'end',
-        story: 'You found a hidden cave within the cave leading to an underground city!',
-        image: 'https://user-images.githubusercontent.com/86164231/282337535-bdd5c9b5-9bfe-46d9-8e23-33ff4ed24c59.jpg'
-    },
-    12: {
-        stage: 'end',
-        story: 'You discovered a time machine hidden in the cave!',
-        image: 'https://user-images.githubusercontent.com/86164231/282337536-ee468260-1a1a-4d23-9c46-69ab60f6da47
-    }
+    
 };
