@@ -22,3 +22,4 @@ This repo has a dev container. This means if you open it inside a [GitHub Codesp
 ![ancient artifact](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/2b8ed078-3b10-4c08-ab83-69b2fdd4bd03)
 ![hidden treasure chest](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/567ca250-402c-4873-aa80-e5cfb19cd596)
 ![hidden treasure](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/abd820cc-78d8-43bb-b575-09793991fbb5)
+![village](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/b86bf79f-417f-48b2-9c08-0200dbb3e3a4)
