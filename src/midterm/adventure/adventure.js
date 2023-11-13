@@ -23,15 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Remove existing choice buttons
         choicesContainer.innerHTML = '';
-
-        // Display choices
-        gameState.choices.forEach(choice => {
-            const button = document.createElement('button');
-            button.textContent = choice.text;
-            button.addEventListener('click', () => makeChoice(choice));
-            choicesContainer.appendChild(button);
-        });
-
+        console.log("gaa"+gameState.stage)
         // Display ending image if the game is over
         if (gameState.stage === 'end') {
             endingImage.src = gameState.image;
@@ -41,13 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
             endingImage.style.display = 'none';
             restartButton.style.display = 'none';
         }
+        // Display choices
+        gameState.choices.forEach(choice => {
+            const button = document.createElement('button');
+            button.textContent = choice.text;
+            button.addEventListener('click', () => makeChoice(choice));
+            choicesContainer.appendChild(button);
+        });
+        
+        
     }
 
     function makeChoice(choice) {
         gameState = gameData[choice.consequence];
         updatePage();
         document.getElementById('story-image').src = gameState.image;
-        console.log(gameState);
+        console.log(gameState.choices[0].image);
         // Check if it's an ending
         if (gameState.stage === 'end') {
             // Display the relevant image for the ending
