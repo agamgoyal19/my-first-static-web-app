@@ -75,7 +75,7 @@ const gameData = {
     3: {
         stage: 'end',
         story: 'You decide to turn back and explore the forest. You discover a hidden treasure!',
-        image: 'treasure.jpg'
+        image: 'https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/abd820cc-78d8-43bb-b575-09793991fbb5'
     },
     4: {
         stage: 4,
@@ -96,21 +96,21 @@ const gameData = {
     6: {
         stage: 'end',
         story: 'You open the door and discover a hidden treasure chest!',
-        image: 'treasure-chest.jpg'
+        image: 'https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/567ca250-402c-4873-aa80-e5cfb19cd596'
     },
     7: {
         stage: 'end',
         story: 'You continue straight and find an ancient artifact!',
-        image: 'artifact.jpg'
+        image: 'https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/2b8ed078-3b10-4c08-ab83-69b2fdd4bd03'
     },
     8: {
         stage: 'end',
         story: 'You successfully jump across the chasm and find a magical portal!',
-        image: 'portal.jpg'
+        image: 'https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/fb9771c0-2ca7-4d5d-b162-6acc4579a987'
     },
     9: {
         stage: 'end',
         story: 'You wisely find another path and stumble upon a secret garden!',
-        image: 'garden.jpg'
+        image: 'https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/7cb73620-181f-4b25-9c61-90fd36c7ad08'
     }
 };
