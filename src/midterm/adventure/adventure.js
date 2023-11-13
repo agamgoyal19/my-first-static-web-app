@@ -106,7 +106,7 @@ const gameData = {
     8: {
         stage: 'end',
         story: 'You successfully jump across the chasm and find a magical portal!',
-        image: ''
+        image: 'https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/fb9771c0-2ca7-4d5d-b162-6acc4579a987'
     },
     9: {
         stage: 'end',
