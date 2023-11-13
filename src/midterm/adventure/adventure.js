@@ -94,7 +94,7 @@ const gameData = {
      8: {
         stage: 'end',
         story: 'You continue along the left door and discover a peaceful village.',
-        background:'url("https://raw.githubusercontent.com/agamgoyal19/my-first-static-web-app/main/src/midterm/adventure/village.jpg")'
+        image: 'village.jpg'
     9: {
         stage: 'end',
         story: 'You took the right door and unlock a portal to another realm!',
