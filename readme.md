@@ -17,3 +17,8 @@ This repo has a dev container. This means if you open it inside a [GitHub Codesp
 ![t1](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/d0b9188e-8f56-4829-bff0-742d1d6588d6)
 ![t2](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/375907c3-70ed-4cc5-b46d-2e36b1cc06f0)
 ![t3](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/f6f956ea-0834-4826-90d8-eca567133df0)
+![secret garden](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/7cb73620-181f-4b25-9c61-90fd36c7ad08)
+![magical portal](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/fb9771c0-2ca7-4d5d-b162-6acc4579a987)
+![ancient artifact](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/2b8ed078-3b10-4c08-ab83-69b2fdd4bd03)
+![hidden treasure chest](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/567ca250-402c-4873-aa80-e5cfb19cd596)
+![hidden treasure](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/abd820cc-78d8-43bb-b575-09793991fbb5)
