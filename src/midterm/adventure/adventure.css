@@ -13,7 +13,8 @@ body {
 
 #game-board {
     padding: 20px;
-    text-align: center;
+    margin-left:100px;
+    margin-top:50px;
     max-width: 600px;
     width: 100%;
     font-size:25px;
