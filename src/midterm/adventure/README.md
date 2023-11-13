@@ -1,0 +1,5 @@
+![secret garden](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/2bce1524-1d4e-4323-a7d4-455613b4e753)
+![magical portal](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/3f1181ac-fb66-4cb6-a715-62634f0f2bcf)
+![ancient artifact](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/5df861b5-8f96-474e-8a56-aedaef9cc76b)
+![hidden treasure chest](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/14cd6edd-fc69-4dd0-aed7-5fd1fdfb8dde)
+![hidden treasure](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/905f9420-f203-4074-aa86-9a4da951338b)
