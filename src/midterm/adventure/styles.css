@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #282c35;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            transition: background-color 0.3s ease;
+        }
+
+        header {
+            background-color: #3a3a3a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid #666;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        #story {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        #choices button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #4d4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #choices button:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
+
+        #image-container {
+            width: 100%;
+            text-align: center;
+        }
+
+        #story-image {
+            max-width: 100%;
+            height: 300px; /* Set a fixed height for all images */
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        #end-message {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #fff;
+        }
+    </style>
+    <title>Choose Your Horror Adventure</title>
+</head>
+
+<body>
+    <header>
+        <h1>Choose Your Horror Adventure</h1>
+    </header>
+    <main>
+        <div id="story"></div>
+        <div id="choices"></div>
+        <div id="image-container">
+            <img id="story-image" src="" alt="Story Image">
+        </div>
+        <div id="end-message"></div>
+    </main>
+    <script>
+const story = [
+    {
+        text: "You wake up in a dimly lit room with a single flickering candle. What do you do?",
+        choices: [
+            { text: "Examine the room", consequence: 1 },
+            { text: "Try to find an exit", consequence: 2 }
+        ],
+        image: "candle.jpg"
+    },
+    {
+        text: "As you examine the room, you hear mysterious whispers. What do you do?",
+        choices: [
+            { text: "Listen closely", consequence: 3 },
+            { text: "Ignore the whispers and proceed", consequence: 4 }
+        ],
+        image: "whispers.jpg"
+    },
+    {
+        text: "You find a rusty key on a dusty table. What's your next move?",
+        choices: [
+            { text: "Use the key to unlock a hidden door", consequence: 5 },
+            { text: "Leave the key and continue exploring", consequence: 6 }
+        ],
+        image: "key.jpg"
+    },
+    {
+        text: "The whispers grow louder, and shadows dance in the corners. What's your reaction?",
+        choices: [
+            { text: "Confront the shadows", consequence: 7 },
+            { text: "Retreat and find a safe spot", consequence: 8 }
+        ],
+        image: "shadows.jpg"
+    },
+    {
+        text: "A ghostly figure appears before you. How do you respond?",
+        choices: [
+            { text: "Attempt to communicate with the ghost", consequence: 9 },
+            { text: "Run away in terror", consequence: 10 }
+        ],
+        image: "ghost.jpg"
+    },
+    {
+        text: "You unlock the hidden door and enter a pitch-black hallway. What's your next move?",
+        choices: [
+            { text: "Bravely walk through the darkness", consequence: 11 },
+            { text: "Search for a light source before proceeding", consequence: 12 }
+        ],
+        image: "hallway.jpg"
+    },
+    {
+        text: "The hallway seems endless, and eerie sounds surround you. What's your reaction?",
+        choices: [
+            { text: "Keep walking forward", consequence: 13 },
+            { text: "Turn back and return to the room", consequence: 14 }
+        ],
+        image: "endless_hallway.jpg"
+    },
+    {
+        text: "You encounter a sinister presence at the end of the hallway. What do you do?",
+        choices: [
+            { text: "Face the presence and uncover the truth", consequence: 15 },
+            { text: "Try to escape the haunted hallway", consequence: 16 }
+        ],
+        image: "sinister_presence.jpg"
+    },
+    {
+        text: "You find a mirror that reflects a distorted image of yourself. What do you do?",
+        choices: [
+            { text: "Shatter the mirror", consequence: 17 },
+            { text: "Look away and continue exploring", consequence: 18 }
+        ],
+        image: "mirror.jpg"
+    },
+    {
+        text: "A chilling breeze sweeps through the corridor, and a door creaks open. What's your next move?",
+        choices: [
+            { text: "Investigate the open door", consequence: 19 },
+            { text: "Avoid the open door and proceed cautiously", consequence: 20 }
+        ],
+        image: "open_door.jpg"
+    },
+    {
+        text: "You stumble upon an ancient book covered in dust. Will you read its contents?",
+        choices: [
+            { text: "Read the mysterious book", consequence: 21 },
+            { text: "Leave the book undisturbed", consequence: 22 }
+        ],
+        image: "mysterious_book.jpg"
+    },
+    {
+        text: "A series of eerie paintings line the walls, each depicting a different horror. How do you react?",
+        choices: [
+            { text: "Examine the paintings closely", consequence: 23 },
+            { text: "Quickly pass by without looking", consequence: 24 }
+        ],
+        image: "eerie_paintings.jpg"
+    },
+    // Different endings
+    {
+        text: "You discover a secret passage leading to daylight. You've escaped the haunted place!",
+        choices: [
+            { text: "Play again", consequence: 0 }, // Restart the game
+            { text: "Close the browser", consequence: undefined } // End the game
+        ],
+        image: "safe_passage.jpg"
+    },
+    {
+        text: "As you approach the mysterious presence, it engulfs you, and your existence fades away.",
+        choices: [
+            { text: "Try again", consequence: 0 }, // Restart the game
+            { text: "Quit for now", consequence: undefined } // End the game
+        ],
+        image: "dark_end.jpg"
+    },
+    {
+        text: "You unlock a door and find yourself in a room filled with treasure. Congratulations, you've won!",
+        choices: [
+            { text: "Claim your treasure and end the adventure", consequence: undefined } // End the game
+        ],
+        image: "treasure_room.jpg"
+    },
+    {
+        text: "You've reached the end of this horror adventure. What will you do now?",
+        choices: [
+            { text: "Play again", consequence: 0 }, // Restart the game
+            { text: "Close the browser", consequence: undefined } // End the game
+        ],
+        image: "end.jpg"
+    }
+];
+
+let currentStoryIndex = 0;
+
+function startGame() {
+    currentStoryIndex = 0;
+    updatePage();
+}
+
+function updatePage() {
+    const currentScene = story[currentStoryIndex];
+    const storyElement = document.getElementById("story");
+    const choicesElement = document.getElementById("choices");
+    const imageElement = document.getElementById("story-image");
+
+    storyElement.textContent = currentScene.text;
+    imageElement.src = currentScene.image;
+
+    choicesElement.innerHTML = "";
+    currentScene.choices.forEach((choice, index) => {
+        const button = document.createElement("button");
+        button.textContent = choice.text;
+        button.addEventListener("click", () => makeChoice(index));
+        choicesElement.appendChild(button);
+    });
+}
+
+function makeChoice(choiceIndex) {
+    const currentScene = story[currentStoryIndex];
+    const choice = currentScene.choices[choiceIndex];
+    currentStoryIndex = choice.consequence;
+
+    if (currentStoryIndex === undefined) {
+        endGame();
+    } else {
+        updatePage();
+    }
+}
+
+function endGame() {
+    const storyElement = document.getElementById("story");
+    const choicesElement = document.getElementById("choices");
+    const imageElement = document.getElementById("story-image");
+    const endMessageElement = document.getElementById("end-message");
+
+    storyElement.textContent = "";
+    choicesElement.innerHTML = "";
+    imageElement.src = "end.jpg";
+
+    // Check if there's a custom end message for the conclusion
+    if (story[currentStoryIndex]) {
+        endMessageElement.textContent = story[currentStoryIndex].text;
+    } else {
+        // Default ending message
+        endMessageElement.textContent = "Congratulations! You survived the horror.";
+    }
+}
+
+startGame();
+
+    </script>
+</body>
+
+</html>
