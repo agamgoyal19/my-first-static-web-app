@@ -6,9 +6,6 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
-    background-image:url('https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/f6f956ea-0834-4826-90d8-eca567133df0');
-    background-repeat:no-repeat;
-    background-size:cover;
 }
 
 #game-board {
