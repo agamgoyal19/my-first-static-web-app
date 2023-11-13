@@ -94,7 +94,7 @@ const gameData = {
      8: {
         stage: 'end',
         story: 'You continue along the left door and discover a peaceful village.',
-        image: 'village.jpg'
+        image: 'https://github.com/agamgoyal19/my-first-static-web-app/blob/main/src/midterm/adventure/village.jpg?raw=true'
     },
     9: {
         stage: 'end',
