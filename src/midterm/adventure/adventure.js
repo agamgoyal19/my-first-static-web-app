@@ -81,7 +81,7 @@ const gameData = {
         stage: 4,
         story: 'You take a left turn and now here is a mysterious door. What you will choose to do?',
         choices: [
-            { text: 'Go towrds door and open it', consequence: 6, image: 'door.jpg' },
+            { text: 'Go towards door and open it', consequence: 6, image: 'door.jpg' },
             { text: 'Go straight', consequence: 7, image: 'straight.jpg' }
         ]
     },
@@ -100,7 +100,7 @@ const gameData = {
     },
     7: {
         stage: 'end',
-        story: 'You continued straight and now here is  an ancient artifact!',
+        story: 'You continued straight and now here is an ancient artifact!',
         image: 'https://user-images.githubusercontent.com/86164231/282337529-5df861b5-8f96-474e-8a56-aedaef9cc76b.jpg'
     },
     8: {
@@ -112,5 +112,20 @@ const gameData = {
         stage: 'end',
         story: 'You wisely found another path and stumbled upon a secret garden!',
         image: 'https://user-images.githubusercontent.com/86164231/282337532-2bce1524-1d4e-4323-a7d4-455613b4e753.jpg'
-    }
+    },
+    10: {
+        stage: 'end',
+        story: 'You encountered a mysterious portal and it transported you to a different dimension!',
+        image: 'https://user-images.githubusercontent.com/86164231/282337533-7397c7b5-2e8c-4d6a-b090-f79f3eb94e1a.jpg'
+    },
+    11: {
+        stage: 'end',
+        story: 'You found a hidden cave within the cave leading to an underground city!',
+        image: 'https://user-images.githubusercontent.com/86164231/282337535-bdd5c9b5-9bfe-46d9-8e23-33ff4ed24c59.jpg'
+    },
+    12: {
+        stage: 'end',
+        story: 'You discovered a time machine hidden in the cave!',
+        image: 'https://user-images.githubusercontent.com/86164231/282337536-ee468260-1a1a-4d23-9c46-69ab60f6da47.jpg'
+    },
 };
