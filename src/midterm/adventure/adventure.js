@@ -13,37 +13,39 @@ document.addEventListener('DOMContentLoaded', () => {
         updatePage();
     }
 
-    function updatePage() {
+  function updatePage() {
         const storyText = document.getElementById('story-text');
         const choicesContainer = document.getElementById('choices');
         const endingImage = document.getElementById('ending-image');
         const restartButton = document.getElementById('restart-button');
-
-        
-
+    
         // Remove existing choice buttons
         choicesContainer.innerHTML = '';
-        console.log("gaa"+gameState.stage)
+        console.log("gaa" + gameState.stage);
+    
         // Display ending image if the game is over
         if (gameState.stage === 'end') {
             endingImage.src = gameState.image;
-            endingImage.style.display = 'block';
-            restartButton.style.display = 'none';a
-        } else { 
             endingImage.style.display = 'none';
             restartButton.style.display = 'none';
+            storyText.innerHTML = gameState.story.includes('Ending game') ? '&nbsp;' : gameState.story;
+        } else {
+            endingImage.style.display = 'none';
+            restartButton.style.display = 'none';
+    
+            // Display story text
+            storyText.innerHTML = gameState.story;
+    
+            // Display choices
+            gameState.choices.forEach(choice => {
+                const button = document.createElement('button');
+                button.textContent = choice.text;
+                button.addEventListener('click', () => makeChoice(choice));
+                choicesContainer.appendChild(button);
+            });
         }
-        storyText.textContent = gameState.story;
-        // Display choices
-        gameState.choices.forEach(choice => {
-            const button = document.createElement('button');
-            button.textContent = choice.text;
-            button.addEventListener('click', () => makeChoice(choice));
-            choicesContainer.appendChild(button);
-        });
-        
     }
-
+    
     function makeChoice(choice) {
         gameState = gameData[choice.consequence];
         updatePage();
