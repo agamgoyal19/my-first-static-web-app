@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (gameState.stage === 'end') {
             endingImage.src = gameState.image;
             endingImage.style.display = 'block';
-            restartButton.style.display = 'block';
+            restartButton.style.display = 'none';
         } else {
             endingImage.style.display = 'none';
             restartButton.style.display = 'none';
