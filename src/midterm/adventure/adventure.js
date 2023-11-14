@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const endingImage = document.getElementById('ending-image');
         const restartButton = document.getElementById('restart-button');
 
-        storyText.textContent = gameState.story;
+        
 
         // Remove existing choice buttons
         choicesContainer.innerHTML = '';
@@ -28,11 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (gameState.stage === 'end') {
             endingImage.src = gameState.image;
             endingImage.style.display = 'block';
-            restartButton.style.display = 'none';
-        } else {
+            restartButton.style.display = 'none';a
+        } else { 
             endingImage.style.display = 'none';
             restartButton.style.display = 'none';
         }
+        storyText.textContent = gameState.story;
         // Display choices
         gameState.choices.forEach(choice => {
             const button = document.createElement('button');
@@ -40,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener('click', () => makeChoice(choice));
             choicesContainer.appendChild(button);
         });
-        
         
     }
 
