@@ -1,27 +1,36 @@
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
+  background-color: #f5f5f5;
 }
 
 h1 {
   text-align: center;
+  color: #333;
 }
 
 form {
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
   display: block;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 input[type="text"],
 input[type="submit"] {
-  width: 100%;
+  width: calc(100% - 12px);
   padding: 8px;
   margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 input[type="submit"] {
@@ -29,4 +38,8 @@ input[type="submit"] {
   color: white;
   border: none;
   cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
 }
