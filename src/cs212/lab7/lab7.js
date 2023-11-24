@@ -10,14 +10,14 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/cs212/lab7', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/index.html'));
+  res.sendFile(path.join(__dirname, '/public/lab7.html'));
 });
 
 app.post('/cs212/lab7', (req, res) => {
   const { pluralNoun, adjective, verb, adverb, color, animal, bodyPart, occupation, food, emotion } = req.body;
 
   // Render the madlib_display.ejs template with the collected input values
-  res.render('madlib_display', {
+  res.render('lab7result', {
     pluralNoun,
     adjective,
     verb,
