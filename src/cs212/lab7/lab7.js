@@ -6,6 +6,8 @@ const port = 8080;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 app.get('/cs212/lab7', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/index.html'));
@@ -14,9 +16,19 @@ app.get('/cs212/lab7', (req, res) => {
 app.post('/cs212/lab7', (req, res) => {
   const { pluralNoun, adjective, verb, adverb, color, animal, bodyPart, occupation, food, emotion } = req.body;
 
-  const madLib = `In a ${adjective} land, there were ${pluralNoun} ${verb} ${adverb}, painting the sky in shades of ${color}. ${animal} with ${bodyPart} of ${occupation} enjoyed eating ${food} with ${emotion}.`;
-
-  res.send(`<h2>Your Mad Lib:</h2><p>${madLib}</p>`);
+  // Render the madlib_display.ejs template with the collected input values
+  res.render('madlib_display', {
+    pluralNoun,
+    adjective,
+    verb,
+    adverb,
+    color,
+    animal,
+    bodyPart,
+    occupation,
+    food,
+    emotion
+  });
 });
 
 app.listen(port, () => {
