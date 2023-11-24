@@ -1,37 +1,22 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const app = express();
 const port = 8080;
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/cs212/lab7', (req, res) => {
-  // Your HTML form here
-  res.send(`
-    <form action="/cs212/lab7" method="post">
-      <label for="pluralNoun">Plural Noun:</label>
-      <input type="text" id="pluralNoun" name="pluralNoun"><br><br>
-
-      <label for="adjective">Adjective:</label>
-      <input type="text" id="adjective" name="adjective"><br><br>
-
-      <!-- Add more inputs as needed for your Mad Lib -->
-
-      <input type="submit" value="Submit">
-    </form>
-  `);
+  res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
 app.post('/cs212/lab7', (req, res) => {
-  const { pluralNoun, adjective } = req.body;
-  // Retrieve other inputs as needed
+  const { pluralNoun, adjective, verb, adverb, color, animal, bodyPart, occupation, food, emotion } = req.body;
 
-  // Construct your Mad Lib
-  const madLib = `Once upon a time, ${adjective} ${pluralNoun} lived happily ever after.`;
-  // Create your complete Mad Lib using the received inputs
+  const madLib = `In a ${adjective} land, there were ${pluralNoun} ${verb} ${adverb}, painting the sky in shades of ${color}. ${animal} with ${bodyPart} of ${occupation} enjoyed eating ${food} with ${emotion}.`;
 
-  // Send the filled Mad Lib as a response
-  res.send(`<p>${madLib}</p>`);
+  res.send(`<h2>Your Mad Lib:</h2><p>${madLib}</p>`);
 });
 
 app.listen(port, () => {
