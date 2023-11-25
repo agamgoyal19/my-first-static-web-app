@@ -5,7 +5,9 @@ body {
   background-size:cover;
   background-repeat:no-repeat;
 }
-
+img {
+  width:50%;
+}
 form {
   width: 50%;
   margin: 0 auto;
