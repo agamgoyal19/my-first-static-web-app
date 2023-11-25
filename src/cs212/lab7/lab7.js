@@ -16,7 +16,8 @@ function handleSubmit(event) {
   // Constructing the Mad Lib (this is a simple example)
   const madLibResult = `The plural noun you entered is: ${pluralNoun}`;
   // You can construct your Mad Lib based on the collected inputs
-  
+  const adjective = document.getElementById('adjective').value;
+  const madLibResult = `The adjective you entered is: ${adjective}`;
   // Display the result or take further actions
   console.log(madLibResult);
   // You could display the result on the page or send it to the server via AJAX
