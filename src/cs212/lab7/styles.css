@@ -3,6 +3,7 @@ body {
   font-family: Arial, sans-serif;
   background-image:url('https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/d78d095a-8a23-422b-8797-878349ac3b20');
   background-size:cover;
+  background-repeat:no-repeat;
 }
 
 form {
