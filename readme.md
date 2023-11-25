@@ -24,3 +24,4 @@ This repo has a dev container. This means if you open it inside a [GitHub Codesp
 ![hidden treasure](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/abd820cc-78d8-43bb-b575-09793991fbb5)
 ![village](https://raw.githubusercontent.com/agamgoyal19/my-first-static-web-app/main/src/midterm/adventure/village.jpg)
 ![madlib1](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/98471544-705c-4148-a72e-44274cc53ea3)
+![madlib2](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/d43f1a15-a805-4334-bee0-65c6881d5c89)
