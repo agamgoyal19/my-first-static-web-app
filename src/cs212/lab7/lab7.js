@@ -10,7 +10,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/cs212/lab7', (req, res) => {
-  res.render('lab7'); // Render the form using EJS
+  res.render('madlib_display'); // Render the form using EJS
 });
 
 
