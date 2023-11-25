@@ -9,15 +9,18 @@ function handleSubmit(event) {
 
   // Collect input values from the form
   const pluralNoun = document.getElementById('pluralNoun').value;
-  // Add other input fields as needed
-
-  // Perform operations or validations on the inputs if necessary
-  
-  // Constructing the Mad Lib (this is a simple example)
+   const adjective = document.getElementById('adjective').value;
+   const verb = document.getElementById('verb').value;
+   const adverb = document.getElementById('adverb').value;
+   const color = document.getElementById('color').value;
+   const animal = document.getElementById('animal').value;
+   const bodyPart = document.getElementById('bodyPart').value;
+   const occupation = document.getElementById('occupation').value;
+  const food = document.getElementById('food').value;
+  const emotion = document.getElementById('emotion').value;
   const madLibResult = `The plural noun you entered is: ${pluralNoun}`;
-  // You can construct your Mad Lib based on the collected inputs
+  const madLibResult = `The ${adjective} ${pluralNoun} ${verb} ${adverb} in the ${color} ${animal}'s ${bodyPart} while ${occupation} was eating ${food} feeling ${emotion}.`;
   
-  // Display the result or take further actions
   console.log(madLibResult);
   // You could display the result on the page or send it to the server via AJAX
 
