@@ -10,8 +10,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/cs212/lab7', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/lab7.html'));
+  res.render('lab7'); // Render the form using EJS
 });
+
 
 app.post('/cs212/lab7', (req, res) => {
   const { pluralNoun, adjective, verb, adverb, color, animal, bodyPart, occupation, food, emotion } = req.body;
