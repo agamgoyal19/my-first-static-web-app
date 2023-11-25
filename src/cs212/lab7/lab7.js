@@ -19,7 +19,7 @@ function handleSubmit(event) {
   const food = document.getElementById('food').value;
   const emotion = document.getElementById('emotion').value;
   const madLibResult = `The plural noun you entered is: ${pluralNoun}`;
-  const madLibResult = `The ${adjective} ${pluralNoun} ${verb} ${adverb} in the ${color} ${animal}'s ${bodyPart} while ${occupation} was eating ${food} feeling ${emotion}.`;
+ 
   
   console.log(madLibResult);
   // You could display the result on the page or send it to the server via AJAX
