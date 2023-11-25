@@ -1,37 +1,31 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-const app = express();
-const port = 8080;
+// madlib.js
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// Accessing the form
+const madLibForm = document.querySelector('form');
 
-app.get('/cs212/lab7', (req, res) => {
-  res.render('lab7result'); // Render the form using EJS
-});
+// Function to handle form submission
+function handleSubmit(event) {
+  event.preventDefault(); // Prevent default form submission behavior
 
+  // Collect input values from the form
+  const pluralNoun = document.getElementById('pluralNoun').value;
+  // Add other input fields as needed
 
-app.post('/cs212/lab7', (req, res) => {
-  const { pluralNoun, adjective, verb, adverb, color, animal, bodyPart, occupation, food, emotion } = req.body;
+  // Perform operations or validations on the inputs if necessary
+  
+  // Constructing the Mad Lib (this is a simple example)
+  const madLibResult = `The plural noun you entered is: ${pluralNoun}`;
+  // You can construct your Mad Lib based on the collected inputs
+  
+  // Display the result or take further actions
+  console.log(madLibResult);
+  // You could display the result on the page or send it to the server via AJAX
 
-  // Render the madlib_display.ejs template with the collected input values
-  res.render('lab7result', {
-    pluralNoun,
-    adjective,
-    verb,
-    adverb,
-    color,
-    animal,
-    bodyPart,
-    occupation,
-    food,
-    emotion
-  });
-});
+  // For instance, you might want to display the result in a specific div on the page
+  const madLibOutput = document.createElement('div');
+  madLibOutput.textContent = madLibResult;
+  document.body.appendChild(madLibOutput);
+}
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+// Adding a listener for form submission
+madLibForm.addEventListener('submit', handleSubmit);
