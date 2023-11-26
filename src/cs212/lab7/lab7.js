@@ -19,7 +19,7 @@ function handleSubmit(event) {
   // Add other input fields as needed
 
   // Constructing the Mad Lib
-  const madLibResult = `The message -: In this ${adjective} island there were ${pluralNoun} ${color} colored ${animal}s that have ${bodyPart} for ${verb} and they enjoy eating ${food} while feeling ${emotion}!`;
+  const madLibResult = `The message -: In this ${adjective} island there were ${pluralNoun} ${color} colored ${animal}s that have ${bodyPart} for ${verb} and then enjoying eating ${food} while feeling ${emotion}!`;
   // You can construct your Mad Lib based on the collected inputs
   // Display the result or take further actions
   console.log(madLibResult);
