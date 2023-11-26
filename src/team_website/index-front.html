@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        var ju=false;
+        var jm=false;
+        var jp=false;
+        $(document).ready(function(){
+           $("#btnsignup").click(function(){
+               if(ju==false||jp==false||jm==false)
+                {  alert("fill valid data");
+                return;
+                }
+                var email = $("#mailid").val();
+                var pwd = $("#pwd").val();
+                var mob = $("#mob").val();
+                
+                var occupation;
+                if($("#doctor").prop("checked")==true)
+                    occupation=$("#doctor").val();
+                if($("#patient").prop("checked")==true)
+                    occupation=$("#patient").val();
+                var url = "index-signup.php?email="+email+"&pwd="+pwd+"&mob="+mob+"&occupation="+occupation;
+
+                $.get(url, function(response) {
+                    $("#result").html(response); 
+        
+        });
+        });
+         
+                $("#btnlogin").click(function(){
+                var txtEmail = $("#email").val();
+                var txtpwd = $("#pass").val();
+                $.get("index-login.php?uid=" + txtEmail + "&pwd=" + txtpwd, function(response) {
+                    if(response=="Doctor")
+                        location.href="doctor-profile-front.php";
+                    else if(response=="Patient")
+                    {
+                        location.href="dashboard-patient.php";
+                    }
+                    else
+                        $("#res2").html(response);
+                });
+        });
+            //=========================
+            
+            $("#btnForgot").click(function() {
+                //alert();
+                var uid = $("#FUid").val();
+                $.get("index-forgot.php?uid=" + uid, function(response) {
+                    //alert(response);
+                    $("#res3").html(response);
+                });
+            });
+            
+            //=======================
+            
+            $("#mailid").blur(function(){
+                var uid=$(this).val();
+                var r=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+                var result=r.test(uid);
+                if(result==false)
+                {
+                    $("#errUid").html("Invalid");
+                    ju=false;
+                }
+                else
+                {    
+                    $("#errUid").html("Valid");
+                    ju=true;
+                }
+            });
+            
+            
+           //================
+            
+            
+            $("#pwd").blur(function(){
+                var pass=$(this).val();
+                var r=/(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+                var result=r.test(pass );
+                if(result==false)
+                {
+                    $("#errPwd").html("Invalid");
+                    jp=false;
+                }
+                else
+                {    
+                    $("#errPwd").html("Valid");
+                    jp=true;
+                }
+            });
+           
+            //===============
+            
+            $("#mob").blur(function(){
+                var mob=$(this).val();
+                var r=/^[6-9]{1}[0-9]{9}$/;
+                var result=r.test(mob);
+                if(result==false)
+                {
+                    $("#errMob").html("Invalid");
+                    jm=false;
+                }
+                else
+                {    
+                    $("#errMob").html("Valid");
+                    jm=true;
+                }
+            });
+        
+        });
+    </script>
+</head>
+
+<body style="background-color:white;background-image:url(pics/back7.jpeg);background-color:light;">
+    <nav class="navbar navbar-expand-lg" style="height:55px;"> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <div style="margin-top:5px;"><a style="font-size:25px;font-style:italic;margin-left:20px;">pillsandprayers</a></div>
+                <button type="button" class="btn" style="margin-left:375px;height:35px;margin-top:5px;" data-toggle="modal" data-target="#signup"><b style="margin-left:580px;color:black;border-bottom:2px black solid;font-size:17px;">SIGNUP</b></button>
+                <button type="button" class="btn" style="height:35px;margin-top:5px;margin-left:18px;" data-toggle="modal" data-target="#login"><b style="color:black;border-bottom:2px black solid;font-size:17px;">LOGIN</b></button>
+            </ul>
+        </div>
+    </nav>
+    <div>
+    <img src="pics/abc3.1.jpg" style="width:1349px;border-top:3px black solid;height:700px;">
+    </div>
+    <div style="border-top:3px black solid;">
+    <h2><b style="margin-left:570px;color:black;border-bottom:3px black solid;border-left:3px black solid;border-right:3px black solid;font-family:serif;font-size:35px;">OUR SERVICES</b></h2>
+    </div>
+    <div>
+    <div class="card" style="width:17rem;margin-left:20px;border:2px black solid;margin-top:30px;">
+  <img src="pics/hbp.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" style="border-bottom:1px black solid;">HISTORY OF BLOOD PRESSURE</h5>
+    <p class="card-text">YOU CAN RECORD YOUR BP AND CAN FETCH IT WHENEVER REQUIRED.</p>
+  </div>
+</div>
+    <div class="card" style="width:17rem;margin-left:370px;margin-top:-355px;border:2px black solid;">
+  <img src="pics/sugar1.jpg" class="card-img-top" alt="..." style="height:180px;">
+  <div class="card-body">
+    <h5 class="card-title" style="border-bottom:1px black solid;">HISTORY OF SUGAR</h5>
+    <p class="card-text">YOU CAN RECORD YOUR SUGAR DETAILS AND CAN ACCESS IT WHENEVER REQUIRED.</p>
+  </div>
+        </div>
+    <div class="card" style="width:17rem;margin-left:715px;margin-top:-360px;border:2px black solid;">
+  <img src="pics/searchdoctor1.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"  style="border-bottom:1px black solid;">SEARCHING OF DOCTORS</h5>
+    <p class="card-text">YOU CAN EASILY SEARCH FOR DOCTORS FROM ANY CORNER OF WORLD. BEST DOCTORS WILL BE IN YOUR SERVICE.</p>
+  </div>
+        </div>
+    <div class="card" style="width:17rem;margin-top:-360px;margin-left:1050px;border:2px black solid;">
+  <img src="pics/slip1.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" style="border-bottom:1px black solid;">DOCTOR'S SUBSCRIPTION</h5>
+    <p class="card-text">YOU CAN UPLOAD DOCTOR'S SLIPS FOR FUTURE USE.</p>
+  </div>
+</div>
+    <div class="card" style="width:17rem;margin-left:370px;margin-top:30px;border:2px black solid;">
+  <img src="pics/drr3.jpg" class="card-img-top" style="height:192px;">
+  <div class="card-body">
+    <h5 class="card-title" style="border-bottom:1px black solid;">REGISTRATION OF DOCTORS</h5>
+    <p class="card-text">DOCTORS CAN REGISTER HERE EASILY AND PATIENTS CAN EASILY BE ACCESSED.</p>
+  </div>
+        </div>
+    <div class="card" style="width:17rem;margin-left:715px;margin-top:-372px;border:2px black solid;">
+  <img src="pics/safe3.jpg" class="card-img-top" style="height:195px;">
+  <div class="card-body">
+    <h5 class="card-title" style="border-bottom:1px black solid;">SAFE AND SECURE DATA STORAGE</h5>
+    <p class="card-text">YOU CAN FREELY STORE YOUR PERSONAL AS WELL AS EDUCATIONAL DETAILS.</p>
+  </div>
+        </div></div>
+    <div>
+        <div style="margin-top:10px;height:300px;border-top:3px black solid;">
+    <h2><b style="margin-left:500px;color:black;border-bottom:3px black solid;border-left:3px black solid;border-right:3px black solid;font-family:serif;font-size:35px;">MEET THE DEVELOPERS</b></h2>
+    </div>
+        <div><img src="pics/me2.jpg" style="border-radius:75%;width:15rem;margin-top:-300px;margin-left:130px;height:235px;">
+       
+            <h2 style="font-size:15px;margin-top:-220px;margin-left:450px;border-bottom:1px black solid;width:500px;font-style:italic;">I AGAM GOYAL,CURRENTLY PURSUING B.TECH IN 3RD YEAR FROM G.Z.S.C.C.E.T, BATHINDA. 
+                <br><br>I HAVE COMPLETED THIS PROJECT UNDER THE GUIDANCE OF RAJESH BANSAL SIR. HE IS THE AUTHOR OF REAL JAVA AND OWNER OF BANGALORE COMPUTER EDUCATION, BATHINDA.</h2>
+        <img src="pics/sir.jpg" style="border-radius:75%;width:15rem;margin-top:-175px;margin-left:1000px;">
+        </div>
+    </div>
+    <div style="margin-top:15px;border-top:3px black solid;border-bottom:3px black solid;height:270px;">
+    <h2><b style="margin-left:590px;color:black;border-bottom:3px black solid;border-left:3px black solid;border-right:3px black solid;font-family:serif;font-size:35px;">REACH US</b></h2>
+        <h2 style="font-size:35px;margin-left:70px;margin-top:30px;"><a style="border-bottom:1px black solid;">CONTACT US</a></h2><br>
+        <a href="#" class="fa fa-envelope" style="font-size:30px;color:black;margin-left:70px;"></a><b style="margin-left:4px;font-size:20px;">: agamgoyal71419@gmail.com</b><br>
+        <a href="#" class="fa fa-facebook" style="font-size:30px;color:black;margin-left:70px;margin-top:30px;"></a>
+        <a href="#" class="fa fa-twitter" style="font-size:30px;color:black;margin-left:20px;"></a>
+        <a href="#" class="fa fa-instagram" style="font-size:30px;color:black;margin-left:20px;"></a>
+        <div class="mapouter"><div class="gmap_canvas" style="margin-left:480px;margin-top:-190px;"><iframe width="300" height="200" style="border:1px black solid;" id="gmap_canvas" src="https://maps.google.com/maps?q=bangalore%20computer%20education%20bathinda&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://torrent9-fr.com"></a></div><style>.mapouter{position:relative;text-align:right;height:100px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:600px;}</style></div>
+    </div>
+    
+<br //SIGNUP>    
+
+    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:50px;">
+        <div class="modal-dialog" style="border:1px black solid;">
+            <div class="modal-content">
+                <div class="modal-header text-dark" style="background-color:lightblue;border-bottom:1px black solid;">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <b>SIGNUP</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+
+                        <div class="container">
+                            <div class="row text-dark">
+                                <div class="col-md-12">
+                                    <center>
+                                        <label for="Fname">
+                                            <h3><b>CREATE A PROFILE</b></h3>
+                                        </label>
+                                    </center>
+                                </div>
+                            </div>
+
+                            <div class="form-row mt-2">
+                                <div class="form-group col-md-5">
+                                    <label for="inputEmail4"><b>Email</b></label>
+                                    <input type="email" class="form-control" name="mailid" id="mailid">
+                                    <span id="errUid"></span>   
+                                </div>
+                                <div class="form-group col-md-5" style="margin-left:45px;">
+                                    <label for="inputPassword4"><b>Password</b></label>
+                                    <input type="password" class="form-control" name="pwd" id="pwd">
+                                    <span id="errPwd"></span>
+                                </div>
+                            </div>
+                            <div class="form-row mt-2">
+                                <div class="form-group col-md-5">
+                                    <label for="inputEmail4"><b>Mobile</b></label>
+                                    <input type="text" class="form-control" name="mob" id="mob">
+                                    <span id="errMob"></span>
+                                </div>
+                            </div>
+                            <div class="container md-12">
+                                <div class="form-group">
+                           <div class="row">
+                               <div class="col-md-4"><b>CATEGORY:</b></div>
+                            <div class="col-md-4">
+                                <input type="radio" id="doctor" value="Doctor" name="category"><b>Doctor</b>
+                               </div>
+                               <div class="col-md-4">
+                                   <input type="radio" id="patient" value="Patient" name="category"><b>Patient</b>
+                               </div></div>
+                                </div></div><br>
+                            <center>
+                                <button type="button" id="btnsignup" 
+                                 class="btn btn" style="margin-bottom:20px;background-color:lightblue;border:1px black solid;">Sign in</button>
+
+                            </center>
+
+                        </div>
+                        <span id="result"></span>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+   <br //LOGIN>     
+<!-- Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-dark" style="background-color:lightblue;border-bottom:1px black solid">
+          <h5 class="modal-title" id="exampleModalLabel"><b>LOGIN HERE</b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-5 offset-3">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><b>Email address</b></label>
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"><b>Password</b></label>
+                        <input type="password" class="form-control" id="pass" name="pass">
+                        <button type="button" class="btn"  data-toggle="modal" data-target="#forgot-Modal" style="margin-left:200px;margin-top:-65px;font-size:10px;"><b>FORGOT PASSWORD?</b></button>
+                    </div>
+                    <button type="button" class="btn btn" id="btnlogin" value="LOGIN" style="background-color:lightblue;border:1px black solid;">LOGIN</button>
+                     </form>
+                <span id="res2">
+                </span>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn" data-dismiss="modal" style="background-color:lightblue;border:1px black solid;"><b>Close</b></button>
+          
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <!--Forgot- Modal -->
+    <div class="modal fade" id="forgot-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-left:-8px;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-dark" style="background-color:lightblue;border-bottom:1px black solid;">
+                    <h5 class="modal-title" id="exampleModalLabel">FORGOT PASSWORD</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+                <div class="modal-body bg-white text-dark">
+                    <center>
+                        <form>
+                            <div class="form-group">
+                                <label for="FUid"><b>Username ID</b></label>
+                                <input type="text" class="form-control" id="FUid">
+                            </div>
+                            <button type="button" id="btnForgot" class="btn btn" style="background-color:lightblue;border:1px black solid;">REQUEST</button>
+
+                        </form>
+                        <span id="res3">*</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top:-38px;height:5px;margin-left:70px;">
+        <a><b>COPYRIGHT RESERVED</b></a>
+    </div>
+</body>
+
+</html>
