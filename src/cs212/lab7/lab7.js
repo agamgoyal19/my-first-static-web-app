@@ -13,13 +13,13 @@ function handleSubmit(event) {
   const color = document.getElementById('color').value;
   const animal = document.getElementById('animal').value;
   const bodyPart = document.getElementById('bodyPart').value;
-  const occupation = document.getElementById('occupation').value;
+  const verb = document.getElementById('verb').value;
   const food = document.getElementById('food').value;
   const emotion = document.getElementById('emotion').value;
   // Add other input fields as needed
 
   // Constructing the Mad Lib
-  const madLibResult = `The message -: In this ${adjective} island there were ${pluralNoun} ${color} colored ${animal}s that have ${bodyPart} for doing ${occupation} and they enjoy eating ${food} while feeling ${emotion}!`;
+  const madLibResult = `The message -: In this ${adjective} island there were ${pluralNoun} ${color} colored ${animal}s that have ${bodyPart} for ${verb} and they enjoy eating ${food} while feeling ${emotion}!`;
   // You can construct your Mad Lib based on the collected inputs
   // Display the result or take further actions
   console.log(madLibResult);
