@@ -7,26 +7,40 @@
 </head>
 <body>
     <header>
-        <!-- Navigation or header content -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="volunteer.html">Volunteer Portal</a></li>
+                <li><a href="nonprofit.html">Non-profit Dashboard</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li class="nav-item-right"><a href="login.html">Login</a></li>
+                <li class="nav-item1-right"><a href="signup.html">Signup</a></li>
+            </ul>
+        </nav>
     </header>
+<br><br><br><br>
+<form>    
+	<main>
+        <section class="login-section">
+            <h1>Login to CommunityConnect</h1><br><br>
+            <form action="/login" method="POST" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
 
-    <main>
-        <section>
-            <h1>Login to CommunityConnect</h1>
-            <form action="/login" method="POST">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
 
                 <button type="submit">Login</button>
             </form>
         </section>
     </main>
-
+</form>
     <footer>
-        <!-- Footer content -->
+        <p>&copy; 2023 CommunityConnect</p>
     </footer>
 
     <script src="script.js"></script>
