@@ -18,6 +18,10 @@ header {
     padding: 10px;
     border-bottom: 1px solid #ccc;
 }
+nav {
+    background-color:black;
+    color:white;
+}
 
 nav ul {
     list-style: none;
