@@ -6,48 +6,92 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header and Navigation -->
-    <!-- Similar structure to index.html -->
-
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="volunteer.html">Volunteer Portal</a></li>
+                <li><a href="nonprofit.html">Non-profit Dashboard</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li class="nav-item-right"><a href="login.html">Login</a></li>
+                <li class="nav-item1-right"><a href="signup.html">Signup</a></li>
+            </ul>
+        </nav>
+    </header>
    <main>
     <!-- Donation Section Content -->
     <section>
-        <h1>Donate</h1>
-        <p>Thank you for considering a donation! Your contributions make a real difference.</p>
-        
+        <h1 style="text-align:center;">Donate</h1>
+        <p style="text-align:center;">Thank you for considering a donation! Your contributions make a real difference.</p><br>
+        <img src="thankyou.jpg" style="height:500px;margin-left:-20px;width:1470px;"><br><br>
         <h2>Ways to Donate</h2>
         <p>Here are various ways you can contribute:</p>
-        <ul>
-            <li>
-                <strong>Online:</strong> You can donate securely through our website. Choose an amount and a cause you'd like to support.
-            </li>
-            <li>
-                <strong>In-Person:</strong> Visit our office during business hours to make a donation in person.
-            </li>
-            <li>
-                <strong>By Mail:</strong> Send your donation by mail to the following address:
-                <address>
+		<div class="card-container">
+			<div class="card">
+				<div class="card-item">
+					<strong>Online</strong>
+						<p>You can donate securely through our website. Choose an amount and a cause you'd like to support.</p><br>
+						<img src="project1.jpg" class="image">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-item">
+					<strong>In-Person</strong>
+						<p>Visit our office during business hours to make a donation in person.</p><br>
+						<img src="project2.png" class="image">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-item">
+					<strong>By Mail</strong>
+						<p>Send your donation by mail to the following address:</p><br>
+						<img src="project3.jpg" class="image">
+				</div>
+			</div>
+    <!-- Add more features -->
+		</div>
+		<br>
+		<h2>Address</h2>
+		<address>
                     CommunityConnect Donations<br>
                     123 Main Street<br>
                     City, State, ZIP Code
                 </address>
-            </li>
-        </ul>
-        
+        <br><br>
         <h2>Causes We Support</h2>
         <p>Our organization supports various causes, including:</p>
-        <ul>
-            <li>Education initiatives</li>
-            <li>Healthcare access</li>
-            <li>Environmental sustainability</li>
-            <!-- Add more causes -->
-        </ul>
         
-        <p>Every donation, regardless of size, helps us continue our mission of supporting our community. Thank you for your generosity!</p>
+		<div class="card-container">
+			<div class="card">
+				<div class="card-item">
+					<strong>Education initiatives</strong><br><br>
+						<img src="education.jpg" class="image">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-item">
+					<strong>Healthcare access</strong>
+						<br><br>
+						<img src="health.jpg" class="image">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-item">
+					<strong>Environmental sustainability</strong>
+						<br><br>
+						<img src="environment.png" class="image">
+				</div>
+			</div>
+    <!-- Add more features -->
+		</div>
+        <br>
+        <p style="font-weight:1000;text-align:center;margin-bottom:50px;">Every donation, regardless of size, helps us continue our mission of supporting our community. Thank you for your generosity!</p>
     </section>
 </main>
 
-
+	<footer>
+        <p style="margin-top:5px;">&copy; 2023 CommunityConnect</p>
+    </footer>
     <!-- Footer -->
     <!-- Similar structure to index.html -->
 
