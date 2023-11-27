@@ -54,7 +54,7 @@ footer {
 }
 
 .nav-item-right {
-    margin-left: auto; /* Push items to the right */
+    margin-left: 250px; /* Push items to the right */
     list-style: none; /* Remove bullet points */
 }
 
