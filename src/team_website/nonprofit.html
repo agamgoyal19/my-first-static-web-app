@@ -6,15 +6,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header and Navigation -->
-    <!-- Similar structure to index.html -->
-
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="volunteer.html">Volunteer Portal</a></li>
+                <li><a href="nonprofit.html">Non-profit Dashboard</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li class="nav-item-right"><a href="login.html">Login</a></li>
+                <li class="nav-item1-right"><a href="signup.html">Signup</a></li>
+            </ul>
+        </nav>
+    </header>
    <main>
     <!-- Non-profit Dashboard Content -->
     <section>
-        <h1>Non-profit Dashboard</h1>
-        <p>Welcome to the Non-profit Dashboard of CommunityConnect!</p>
-        
+	<br>
+        <h1 style="text-align:center;">Non-profit Dashboard</h1>
+        <p style="text-align:center;">Welcome to the Non-profit Dashboard of CommunityConnect!</p><br>
+        <img src="non-profit-dashboard.jpg" style="height:500px;margin-left:-20px;width:1470px;"><br><br>
         <h2>Dashboard Overview</h2>
         <p>Here, you can manage various aspects of our organization, including:</p>
         <ul>
@@ -24,19 +34,33 @@
             <li><strong>Events:</strong> Plan and organize events to engage with the community.</li>
             <!-- Add more aspects as needed -->
         </ul>
-        
+        <br><br>
         <h2>Current Projects</h2>
         <p>Explore the projects we are currently working on:</p>
-        <ul>
-            <li>
-                <strong>Project Name 1:</strong> Description of the project, its goals, and progress status.
-            </li>
-            <li>
-                <strong>Project Name 2:</strong> Description of the project, its goals, and progress status.
-            </li>
-            <!-- Add more projects -->
-        </ul>
-        
+        <div class="card-container">
+			<div class="card">
+				<div class="card-item">
+					<strong>Project Name 1</strong>
+						<p>Description of the project, its goals, and progress status.</p><br>
+						<img src="project1.jpg" class="image">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-item">
+					<strong>Project Name 2</strong>
+						<p>Description of the project, its goals, and progress status.</p><br>
+						<img src="project2.png" class="image">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-item">
+					<strong>Project Name 3</strong>
+						<p>Description of the project, its goals, and progress status.</p><br>
+						<img src="project3.jpg" class="image">
+				</div>
+			</div>
+    <!-- Add more features -->
+		</div><br><br>
         <h2>Volunteer Management</h2>
         <p>Our volunteers are the backbone of our organization. You can:</p>
         <ul>
@@ -44,11 +68,13 @@
             <li>Recognize outstanding contributions.</li>
             <li>Keep track of volunteer hours and activities.</li>
         </ul>
-        
-        <p>Use this dashboard to efficiently manage and coordinate our efforts towards a better community!</p>
+        <br>
+        <p style="font-weight:1000;text-align:center;margin-bottom:50px;">Use this dashboard to efficiently manage and coordinate our efforts towards a better community!</p>
     </section>
 </main>
-
+	<footer>
+        <p style="margin-top:5px;">&copy; 2023 CommunityConnect</p>
+    </footer>
 
     <!-- Footer -->
     <!-- Similar structure to index.html -->
