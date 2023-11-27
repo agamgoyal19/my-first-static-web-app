@@ -44,6 +44,19 @@ footer {
     text-align: center;
     padding: 10px;
 }
+/* Existing styles */
+
+/* Add these styles to align login and signup links to the right */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    padding: 0;
+}
+
+.nav-item-right {
+    margin-left: auto; /* Push items to the right */
+    list-style: none; /* Remove bullet points */
+}
 
 /* Specific styles for different pages/sections */
 /* Add specific styling for header, navigation, main content, footer, etc. */
