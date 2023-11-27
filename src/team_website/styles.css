@@ -14,13 +14,14 @@ body {
 }
 
 header {
-    background-color: black;
+    background-color: #333;
     padding: 10px;
     border-bottom: 1px solid #ccc;
 }
 
 nav ul {
     list-style: none;
+	margin-bottom:-1px;
 }
 
 nav ul li {
@@ -42,8 +43,26 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+	height:30px;
 }
+footer p {
+	margin-top:-20px;
+}
+.cc {
+	width:30%;
+	margin-left:480px;
+}
+.image1 {
+	width:100%;
+}
+.image {
+	height:100%;
+	width:100%;
+	}
 /* Existing styles */
 
 /* Add these styles to align login and signup links to the right */
@@ -54,9 +73,105 @@ footer {
 }
 
 .nav-item-right {
-    margin-left: 250px; /* Push items to the right */
+    margin-left: 850px; /* Push items to the right */
     list-style: none; /* Remove bullet points */
 }
+.signup-section {
+    text-align: center;
+}
+
+/* Styling for form elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 250px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+.login-section {
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 250px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/*for cards*/
+.card-container {
+    display: flex;
+    flex-wrap: nowrap; /* Ensures cards stay in a single line */
+}
+
+.card {
+    flex: 0 0 auto; /* Prevents cards from growing or shrinking */
+    width: calc(100vw - 40px); /* Adjust total width as needed */
+    max-width: 470px; /* Adjust maximum width for individual cards */
+    margin-right: 10px; /* Adjust as needed for spacing */
+    border: 1px solid #ccc; /* Add borders for clarity */
+    border-radius: 5px;
+}
+
+.card-item {
+    padding: 10px;
+}
+
+.card-item strong {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.card-item p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
 
 /* Specific styles for different pages/sections */
 /* Add specific styling for header, navigation, main content, footer, etc. */
