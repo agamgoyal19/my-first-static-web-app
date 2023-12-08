@@ -40,3 +40,4 @@ This repo has a dev container. This means if you open it inside a [GitHub Codesp
 ![lo2](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/257b726d-ed57-407f-9c67-e28ddee82bbb)
 ![lo1](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/41b1c6a3-47a5-47dd-a8cf-cc0bdf844578)
 ![lo](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/04549fbf-ebde-493a-9cb3-af51796be064)
+![lo7](https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/caa1a71f-4665-41e8-b544-c4100e32a006)
