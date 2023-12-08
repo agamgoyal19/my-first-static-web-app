@@ -1,15 +1,23 @@
+// lightsout.js
+
 // Variables
 const GRID_SIZE = 6;
 const grid = document.getElementById('grid');
 const startBtn = document.getElementById('startBtn');
 const movesCounter = document.getElementById('movesValue');
+const timerValue = document.getElementById('timerValue');
 let board = [];
 let movesCount = 0;
+let timerInterval;
+let seconds = 0;
+let minutes = 0;
 
 // Initialize board
 function initializeBoard() {
   movesCount = 0;
   movesCounter.textContent = movesCount;
+  resetTimer();
+  updateTimer();
 
   // Clear the board by removing all children
   while (grid.firstChild) {
@@ -41,7 +49,6 @@ function randomizeBoard() {
   }
 }
 
-let gameStarted = false;
 // Toggle square and its neighbors
 function toggleSquare(x, y) {
   if (gameStarted) {
@@ -73,8 +80,38 @@ function toggleCell(x, y) {
 function checkWin() {
   const isSolved = board.every(row => row.every(cell => !cell));
   if (isSolved) {
-    window.alert(`You won in ${movesCount} moves!`);
+    window.alert(`You won in ${movesCount} moves in ${timerValue.textContent}!`);
+    stopTimer();
   }
+}
+
+// Timer functions
+function startTimer() {
+  timerInterval = setInterval(() => {
+    seconds++;
+    if (seconds === 60) {
+      minutes++;
+      seconds = 0;
+    }
+    updateTimer();
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  seconds = 0;
+  minutes = 0;
+  updateTimer();
+}
+
+function updateTimer() {
+  const formattedMinutes = String(minutes).padStart(2, '0');
+  const formattedSeconds = String(seconds).padStart(2, '0');
+  timerValue.textContent = `${formattedMinutes}:${formattedSeconds}`;
 }
 
 // Start button event
@@ -85,9 +122,10 @@ startBtn.addEventListener('click', () => {
   }
   initializeBoard();
   randomizeBoard();
-  gameStarted = true; // Set gameStarted to true when the game starts
-  movesCount = 0; // Reset moves count to 0 when starting a new game
-  movesCounter.textContent = movesCount; // Update moves display
+  gameStarted = true;
+  movesCount = 0;
+  movesCounter.textContent = movesCount;
+  startTimer();
 });
 
 // Initialize the game
