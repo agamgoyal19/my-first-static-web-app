@@ -1,9 +1,9 @@
-/* styles.css */
 body {
-	background-image:url('https://github.com/agamgoyal19/my-first-static-web-app/assets/86164231/0e4d780c-3616-4500-804c-b095017a2de9');
-	background-size:cover;
-	background-repeat:no-repeat;
+  background-image: url('path_to_your_background_image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
 /* Grid styles */
 .grid {
   display: grid;
@@ -38,7 +38,7 @@ body {
   transition: background-color 0.3s;
   margin-bottom: 10px;
   background-color: brown;
-  color:white;
+  color: white;
 }
 
 #startBtn:hover {
@@ -48,4 +48,5 @@ body {
 
 #movesCounter {
   font-size: 18px;
+  color: brown;
 }
